@@ -1,5 +1,5 @@
 # Forest-Construction-of-Gaussian-and-discrete-variables-based-on-Bayesian-measures
-## Required Software 
+## Required Softwares
 ### For programming
 R Language version 4.3.2
 
