@@ -33,7 +33,7 @@ n2=ncol(normal_matrix)
 data_list <- list(N = N, num_binomial = n1, num_normal = n2, y1 = binomial_matrix, y2 = t(normal_matrix))
 
 # Compile the Stan model
-fit <-stan(file="stan_model.stan", chains = 4,seed = 1234, data=data_list)
+fit <-stan(file="stan_model_HD.stan", chains = 4,seed = 1234, data=data_list)
 
 
 # Function to calculate free energy
