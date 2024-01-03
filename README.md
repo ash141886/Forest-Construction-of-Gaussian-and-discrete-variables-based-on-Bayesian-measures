@@ -1,4 +1,4 @@
-# Forest-Construction-of-Gaussian-and-discrete-variables-based-on-Bayesian-measures
+# Forest-Construction-based on WBIC
 ## Required Softwares
 ### For programming
 R Language version 4.3.2
