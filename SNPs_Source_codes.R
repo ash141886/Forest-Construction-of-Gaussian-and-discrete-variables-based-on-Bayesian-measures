@@ -1,0 +1,7 @@
+library(gdata)
+source("http://www.bioconductor.org/biocLite.R") 
+biocLite("GGtools", dependencies=TRUE) 
+suppressPackageStartupMessages(library(GGtools)) 
+library(parallel) 
+library(GGtools) 
+data(hmceuB36.2021)
