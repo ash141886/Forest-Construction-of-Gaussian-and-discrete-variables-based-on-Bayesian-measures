@@ -9,5 +9,8 @@ Our proposed method, on the other hand, effectively addresses this limitation, o
 ### For programming
 R Language version 4.3.2
 
+
+RSTUDIO-2023.12.0-369
+
 ### For the graphical representations
 Cytoscape Version 3.10.1
