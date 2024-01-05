@@ -186,7 +186,7 @@ mi_combined[mi_combined <=0] <- 0
 print(mi_combined)
 
 
-#Plot with Krushkal
+# Krushkal algorithm
 
 kruskal_mi=function(w)
 {
@@ -213,7 +213,7 @@ kruskal_mi=function(w)
 
 
 
-# Assuming mi_combined is your MI matrix with NAs for the lower triangle and diagonal
+# Assuming mi_combined is in MI matrix with NAs for the lower triangle and diagonal
 isolated_nodes <- rownames(mi_combined)[apply(mi_combined, 1, function(row) {
   all(row <= 0, na.rm = TRUE)
 })]
@@ -231,6 +231,7 @@ dummy_edges <- data.frame(Source = isolated_nodes, Target = "dummy_node", Weight
 # Combine real and dummy edge lists
 combined_edge_list <- rbind(edge_list, dummy_edges)
 
+# Diagnosis
 
 par(mfrow=c(2,2))
 stan_diag(fit)
