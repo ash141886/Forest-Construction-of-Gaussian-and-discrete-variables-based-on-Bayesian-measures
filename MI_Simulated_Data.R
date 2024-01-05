@@ -192,3 +192,11 @@ mi_mix[mi_combined <= 0] <- 0
 
 # Print or return the combined MI matrix
 print(mi_mix)
+
+
+# Diagnosis
+
+par(mfrow=c(2,2))
+stan_diag(fit)
+stan_rhat(fit, bins=100)
+stan_ess(fit, bins=100)
