@@ -165,13 +165,13 @@ n_normal <- dim(mi_normal_normal)[1]
 
 # Initialize the combined MI matrix
 n_total <- n_bernoulli + n_normal
-mi_combined <- matrix(0, nrow=n_total, ncol=n_total)
+mi_mix <- matrix(0, nrow=n_total, ncol=n_total)
 
 # Fill in the blocks
-mi_combined[1:n_bernoulli, 1:n_bernoulli] <- mi_bernoulli_bernoulli
-mi_combined[(n_bernoulli + 1):n_total, (n_bernoulli + 1):n_total] <- mi_normal_normal
-mi_combined[1:n_bernoulli, (n_bernoulli + 1):n_total] <- mi_bernoulli_normal
-mi_combined[(n_bernoulli + 1):n_total, 1:n_bernoulli] <- t(mi_bernoulli_normal) # transpose
+mi_mix[1:n_bernoulli, 1:n_bernoulli] <- mi_bernoulli_bernoulli
+mi_mix[(n_bernoulli + 1):n_total, (n_bernoulli + 1):n_total] <- mi_normal_normal
+mi_mix[1:n_bernoulli, (n_bernoulli + 1):n_total] <- mi_bernoulli_normal
+mi_mix[(n_bernoulli + 1):n_total, 1:n_bernoulli] <- t(mi_bernoulli_normal) # transpose
 
 
 
@@ -181,14 +181,14 @@ normal_indices <- as.character((n_bernoulli + 1):(n_bernoulli + n_normal))
 combined_indices <- c(bernoulli_indices, normal_indices)
 
 # Assign the new names to the matrix
-colnames(mi_combined) <- combined_indices
-rownames(mi_combined) <- combined_indices
+colnames(mi_mix) <- combined_indices
+rownames(mi_mix) <- combined_indices
 
 # Set lower triangular part to NA
-mi_combined[lower.tri(mi_combined, diag = FALSE)] <- NA
+mi_mix[lower.tri(mi_combined, diag = FALSE)] <- NA
 
 # Set negative terms to 0
-mi_combined[mi_combined <= 0] <- 0
+mi_mix[mi_combined <= 0] <- 0
 
 # Print or return the combined MI matrix
-print(mi_combined)
+print(mi_mix)
